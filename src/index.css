@@ -817,13 +817,10 @@ footer {
 /* Responsive */
 @media (max-width: 960px) {
   .top-nav-container {
-    padding: 0 16px;
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
+    padding: 0 20px;
   }
   .nav-tabs button, .nav-tabs a {
-    padding: 8px 12px;
+    padding: 8px 14px;
     font-size: 0.85rem;
   }
   .two-col {
@@ -838,13 +835,27 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .top-nav-container {
+    display: flex;
     justify-content: space-between;
-    padding: 0 12px;
+    align-items: center;
+    padding: 0 16px;
+  }
+  .nav-tabs {
+    display: none !important;
   }
   .nav-cta {
-    display: none;
+    display: none !important;
+  }
+  .nav-logo {
+    padding: 6px 14px 6px 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-nav-container {
+    padding: 0 12px;
   }
   .nav-logo {
     padding: 4px 10px 4px 6px;

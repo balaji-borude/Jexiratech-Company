@@ -28,3 +28,4 @@ export const TrustBar: React.FC = () => {
     </div>
   );
 };
+
