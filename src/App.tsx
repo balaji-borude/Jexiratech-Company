@@ -11,6 +11,7 @@ import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
+import { ScrollPrompt } from './components/ScrollPrompt';
 
 export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewType>('home');
@@ -75,7 +76,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f6fb] text-[#0d1330] flex flex-col font-sans selection:bg-brand selection:text-white">
+    <div className="min-h-screen bg-[#f3f7f8] text-[#07191c] flex flex-col font-sans selection:bg-[#124045] selection:text-white">
       {/* Floating Glassmorphic Top Bar */}
       <Navbar
         currentView={currentView}
@@ -140,6 +141,9 @@ export const App: React.FC = () => {
         onClose={() => setSelectedProductId(null)}
         onRequestDemo={handleRequestDemo}
       />
+
+      {/* Global Inactivity Mouse Scroll Prompt */}
+      <ScrollPrompt />
     </div>
   );
 };

@@ -62,8 +62,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ productId, onClose, 
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-100">
-            <b className="text-brand block text-xs font-bold uppercase tracking-wider mb-1">
+          <div className="p-4 rounded-xl bg-[#eaf3f4] border border-[#2bb3be]/25">
+            <b className="text-[#124045] block text-xs font-bold uppercase tracking-wider mb-1">
               Architecture & Solution
             </b>
             <p className="text-slate-700 text-sm m-0">

@@ -1,12 +1,12 @@
 import React from 'react';
-import { VALUES, TEAM_MEMBERS } from '../data/content';
-import { MapPin, Shield, Check, Globe } from 'lucide-react';
+import { VALUES } from '../data/content';
+import { Check } from 'lucide-react';
 
 interface AboutViewProps {
-  onContactClick: () => void;
+  onContactClick?: () => void;
 }
 
-export const AboutView: React.FC<AboutViewProps> = ({ onContactClick }) => {
+export const AboutView: React.FC<AboutViewProps> = () => {
   return (
     <div className="space-y-16">
       {/* Intro Story Section */}
@@ -75,7 +75,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onContactClick }) => {
           <div className="values-grid">
             {VALUES.map((val) => (
               <div key={val.title} className="value-card g p-8">
-                <div className="text-3xl mb-3">{val.icon}</div>
+                <div className="w-12 h-12 mb-3">
+                  <img src={val.icon} alt={val.title} className="w-full h-full object-contain" />
+                </div>
                 <b className="text-lg text-ink font-bold mb-2">{val.title}</b>
                 <span className="text-slate-600 text-sm leading-relaxed">{val.desc}</span>
               </div>
@@ -85,7 +87,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onContactClick }) => {
       </section>
 
       {/* Team Section */}
-      <section className="pt-0">
+      {/* <section className="pt-0">
         <div className="wrap">
           <div className="mb-10 text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-brand mb-2 block">
@@ -128,10 +130,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onContactClick }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Location and Regions Served */}
-      <section className="pt-0 pb-12">
+      {/* <section className="pt-0 pb-12">
         <div className="wrap">
           <div className="g p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
@@ -166,7 +168,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onContactClick }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

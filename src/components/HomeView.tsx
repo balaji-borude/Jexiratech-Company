@@ -40,7 +40,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="card g flex flex-col justify-between">
               <div>
-                <div className="card-icon">🧩</div>
+                <div className="card-icon">
+                  <img src="/icons/custom.png" alt="Custom Software" className="w-full h-full object-contain" />
+                </div>
                 <h3>Custom Software</h3>
                 <p>
                   Tools shaped to your exact workflow, from internal management portals to data-heavy customer platforms.
@@ -60,7 +62,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
 
             <div className="card g flex flex-col justify-between">
               <div>
-                <div className="card-icon">📱</div>
+                <div className="card-icon">
+                  <img src="/icons/app-development.png" alt="Web and Mobile Apps" className="w-full h-full object-contain" />
+                </div>
                 <h3>Web and Mobile Apps</h3>
                 <p>
                   Fast, responsive, and secure digital apps engineered for web browsers, Android, and iOS.
@@ -80,7 +84,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
 
             <div className="card g flex flex-col justify-between">
               <div>
-                <div className="card-icon">⚙️</div>
+                <div className="card-icon">
+                  <img src="/icons/automation.png" alt="Business Automation" className="w-full h-full object-contain" />
+                </div>
                 <h3>Business Automation</h3>
                 <p>
                   CRM, ERP, and API integrations that eliminate repetitive manual work, human errors, and data silos.
@@ -133,7 +139,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
                 className="card g group cursor-pointer overflow-hidden p-0"
                 onClick={() => onSelectProduct(item.id)}
               >
-                <div className="relative aspect-video overflow-hidden bg-slate-900">
+                <div className="relative aspect-video overflow-hidden rounded-2xl isolate">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -196,7 +202,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
           <div className="values-grid">
             {VALUES.map((val) => (
               <div key={val.title} className="value-card g">
-                <div className="text-2xl mb-2">{val.icon}</div>
+                <div className="w-10 h-10 mb-2">
+                  <img src={val.icon} alt={val.title} className="w-full h-full object-contain" />
+                </div>
                 <b>{val.title}</b>
                 <span>{val.desc}</span>
               </div>
@@ -210,7 +218,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
         <div className="wrap">
           <div className="dk-container text-center relative overflow-hidden p-12">
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-white text-3xl md:text-4xl mb-4 font-serif">
+              <h2 className="text-white text-3xl md:text-4xl mb-4 font-extrabold tracking-tight">
                 Have an idea or a workflow to automate?
               </h2>
               <p className="text-white/80 text-base md:text-lg mb-8">
