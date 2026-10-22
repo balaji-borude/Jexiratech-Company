@@ -25,22 +25,22 @@ export const HERO_TITLES: Record<string, { title: string; subtitle: string; badg
 
 export const FEATURE_TICKER = [
   {
-    icon: '🧩',
+    icon: '/icons/custom.png',
     title: 'Custom Software',
     desc: 'Built specifically around your team’s workflow',
   },
   {
-    icon: '📱',
+    icon: '/icons/app-development.png',
     title: 'Web & Mobile Apps',
     desc: 'High-performance apps for Browser, Android & iOS',
   },
   {
-    icon: '⚙️',
+    icon: '/icons/automation.png',
     title: 'Business Automation',
     desc: 'ERP & CRM integrations that eliminate manual errors',
   },
   {
-    icon: '☁️',
+    icon: '/icons/infrastructure.png',
     title: 'Cloud & DevOps',
     desc: 'Scalable infrastructure with 99.9% uptime and security',
   },
@@ -49,7 +49,7 @@ export const FEATURE_TICKER = [
 export const CORE_SERVICES: ServiceItem[] = [
   {
     id: 'custom-software',
-    icon: '🧩',
+    icon: '/icons/custom.png',
     title: 'Custom Software Development',
     shortDesc: 'Tools shaped to your workflow, from internal portals to customer platforms.',
     fullDesc: 'We build tailored software architectures that solve complex business challenges, replace fragile spreadsheets, and consolidate disparate systems into one seamless application.',
@@ -58,7 +58,7 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'web-apps',
-    icon: '🌐',
+    icon: '/icons/app-development.png',
     title: 'Web Application Development',
     shortDesc: 'Fast, secure and responsive web apps and company portals.',
     fullDesc: 'Modern single-page applications and responsive platforms designed for lightning-fast load times, bank-grade data security, and effortless user onboarding.',
@@ -67,7 +67,7 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'mobile-apps',
-    icon: '📱',
+    icon: '/icons/app-development.png',
     title: 'Mobile App Development',
     shortDesc: 'Android and iOS apps, native or cross-platform, built to feel ultra smooth.',
     fullDesc: 'Native-feel iOS and Android applications utilizing Flutter and React Native. Enjoy native performance, offline sync capabilities, and seamless app store releases.',
@@ -76,7 +76,7 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'ui-ux',
-    icon: '🎨',
+    icon: '/icons/custom.png',
     title: 'UI/UX Design & Prototyping',
     shortDesc: 'Clean, simple interfaces people understand and love the first time.',
     fullDesc: 'User-centered design that minimizes friction. We craft interactive Figma prototypes, design tokens, and user journey maps so you can test and approve before writing a single line of code.',
@@ -85,7 +85,7 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'automation',
-    icon: '⚙️',
+    icon: '/icons/automation.png',
     title: 'ERP / CRM & Business Automation',
     shortDesc: 'CRM, ERP and integrations that remove repeated manual work and errors.',
     fullDesc: 'Streamline your operations by unifying inventory, sales, customer support, and invoicing. We build custom ERP/CRM modules and connect your legacy software via custom webhooks.',
@@ -94,7 +94,7 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'cloud-support',
-    icon: '☁️',
+    icon: '/icons/infrastructure.png',
     title: 'Cloud Architecture & Support',
     shortDesc: 'Hosting, monitoring, automated backups, and an on-call team for peace of mind.',
     fullDesc: 'Production-ready cloud deployment with Docker, Kubernetes, and serverless environments. We provide ongoing monitoring, vulnerability patching, and performance optimization.',
@@ -210,22 +210,22 @@ export const VALUES = [
   {
     title: 'Quality First',
     desc: 'Tested, well-documented, and maintainable code built to scale with your business.',
-    icon: '✨',
+    icon: '/icons/guarantee.png',
   },
   {
     title: 'Open Communication',
     desc: 'Plain language, transparent updates, and direct access to the engineers building your product.',
-    icon: '💬',
+    icon: '/icons/discussion.png',
   },
   {
     title: 'On-Time Delivery',
     desc: 'We set realistic milestone-driven plans, keep you in the loop, and stick to them.',
-    icon: '⏱️',
+    icon: '/icons/on-time.png',
   },
   {
     title: 'Your Code, Your Data',
     desc: 'Full intellectual property ownership from day one with strict non-disclosure agreements.',
-    icon: '🔒',
+    icon: '/icons/master-data.png',
   },
 ];
 
@@ -270,8 +270,8 @@ export const FAQS: FaqItem[] = [
     question: 'Can you maintain, scale, or refactor our existing software?',
     answer: 'Absolutely. We regularly audit existing codebases, patch vulnerabilities, improve page speeds, add new features, or re-architect legacy systems into modern React and cloud architectures.',
   },
-  {
-    question: 'Where is Jexiratech located and what regions do you serve?',
-    answer: 'Jexiratech Solutions is based in Maharashtra, India. We collaborate with clients across India, North America, Europe, and the Middle East, maintaining clear asynchronous updates and real-time support windows.',
-  },
+  // {
+  //   question: 'Where is Jexiratech located and what regions do you serve?',
+  //   answer: 'Jexiratech Solutions is based in Maharashtra, India. We collaborate with clients across India, North America, Europe, and the Middle East, maintaining clear asynchronous updates and real-time support windows.',
+  // },
 ];

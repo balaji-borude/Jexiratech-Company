@@ -38,8 +38,10 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onContactClick, onSe
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="card-icon">{srv.icon}</div>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-50 text-brand">
+                    <div className="card-icon overflow-hidden p-1">
+                      <img src={srv.icon} alt={srv.title} className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#eaf3f4] text-[#124045] border border-[#2bb3be]/20">
                       Production Ready
                     </span>
                   </div>

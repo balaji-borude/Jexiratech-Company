@@ -68,7 +68,7 @@ ${formData.details}`;
           <span className="text-xs font-bold uppercase tracking-widest text-brand mb-2 block">
             Let's Talk Code & Architecture
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif text-ink mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-ink mb-4">
             Tell us about your project
           </h2>
           <p className="sub text-slate-700 text-base mb-8 leading-relaxed">
@@ -126,9 +126,9 @@ ${formData.details}`;
             <button
               type="button"
               onClick={handleWhatsApp}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
+              className="inline-flex items-center gap-2.5 px-3 py-2 rounded-full bg-[#05a65a] hover:bg-[#048e4d] text-white font-bold text-sm shadow-[0_8px_20px_-4px_rgba(5,166,90,0.4)] transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
-              <MessageCircle size={16} />
+              <img src="/icons/whatsapp.png" alt="WhatsApp" className="w-8 h-8 object-contain" />
               <span>Direct WhatsApp Inquiry</span>
             </button>
           </div>
@@ -206,7 +206,7 @@ ${formData.details}`;
               </label>
             </div>
 
-            <label>
+            {/* <label>
               Estimated Scope / Budget
               <select
                 name="budget"
@@ -218,7 +218,7 @@ ${formData.details}`;
                 <option value="$3,000 - $10,000 / ₹2.5L - ₹8L">Full Application (₹2.5L - ₹8L / $3k-$10k)</option>
                 <option value="$10,000+ / ₹8L+">Enterprise System (₹8L+ / $10k+)</option>
               </select>
-            </label>
+            </label> */}
 
             <label>
               Project Details & Objectives *
@@ -234,9 +234,9 @@ ${formData.details}`;
 
             <button
               type="submit"
-              className="btn brand w-full py-3.5 text-base shadow-xl flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#124045] to-[#1a5860] hover:from-[#0d3135] hover:to-[#14474e] text-white font-bold text-sm sm:text-base shadow-[0_12px_28px_-6px_rgba(18,64,69,0.45)] hover:shadow-[0_16px_36px_-6px_rgba(18,64,69,0.55)] transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center justify-center gap-2.5 group"
             >
-              <Send size={18} />
+              <Send size={17} className="transition-transform group-hover:translate-x-1 text-[#2bb3be]" />
               <span>Send Project Enquiry</span>
             </button>
 
