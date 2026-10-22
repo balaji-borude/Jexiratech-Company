@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, Clock, Send, MessageCircle, Copy, Check, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, MapPin, Clock, Send, Copy, Check, Sparkles } from 'lucide-react';
 
 interface ContactSectionProps {
   initialService?: string;
@@ -17,12 +17,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
 
   const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
-
-  useEffect(() => {
-    if (initialService) {
-      setFormData((prev) => ({ ...prev, service: initialService }));
-    }
-  }, [initialService]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, onConta
             /* Floating Capsule */
             ? 'mt-3 sm:mt-4 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full apple-glass-capsule'
             /* Dynamic Island — docked, rounded bottom, genuine Apple liquid glass */
-            : 'mt-0 px-6 sm:px-8 py-2.5 sm:py-3 rounded-b-[26px] rounded-t-none apple-glass-island'
+            : '-mt-0.5 px-6 sm:px-8 py-2.5 sm:py-3 rounded-b-[20px] rounded-t-none !border-t-0 apple-glass-island'
             }`}
         >
           {/* Desktop Nav tabs */}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PRODUCTS } from '../data/content';
-import { ArrowRight, ExternalLink, Filter, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ExternalLink, CheckCircle2 } from 'lucide-react';
 
 interface PortfolioViewProps {
   onSelectProduct: (productId: string) => void;

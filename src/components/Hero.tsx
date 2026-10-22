@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { ViewType } from '../types';
 import { HERO_TITLES, FEATURE_TICKER } from '../data/content';
-import { ArrowRight, Sparkles, ChevronDown } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   currentView: ViewType;
@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({ currentView, onNavigate, onContactCl
   const heroData = HERO_TITLES[currentView] || HERO_TITLES.home;
 
   return (
-    <header className="relative m-2.5 sm:m-4 rounded-[26px] sm:rounded-[34px] overflow-hidden text-white bg-[#051416] border border-[#2bb3be]/20 shadow-[0_24px_60px_-20px_rgba(5,20,22,0.8)]">
+    <header className="relative mt-0 mx-2.5 mb-2.5 sm:mt-0 sm:mx-4 sm:mb-4 rounded-b-[26px] sm:rounded-b-[34px] rounded-t-none overflow-hidden text-white bg-[#051416] border border-[#2bb3be]/20 shadow-[0_24px_60px_-20px_rgba(5,20,22,0.8)]">
       {/* Dynamic Cosmic Glow Background with Logo Theme Colors */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <i className="absolute -left-[10%] -top-[25%] w-[58%] aspect-square rounded-full bg-[#124045] blur-[85px] opacity-85 block" />
