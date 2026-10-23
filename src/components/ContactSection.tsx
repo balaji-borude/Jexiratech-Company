@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Clock, Send, Copy, Check, Sparkles } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { Mail, MapPin, Clock, Send, Copy, Check, Sparkles, AlertCircle, Loader2 } from 'lucide-react';
 
 interface ContactSectionProps {
   initialService?: string;
 }
+
+const CONTACT_EMAIL = 'jexiratech@gmail.com';
+
+// EmailJS config (set these in your .env file, see setup notes)
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }) => {
   const [formData, setFormData] = useState({
@@ -11,11 +21,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
     email: '',
     phone: '',
     service: initialService || 'Custom software',
-    budget: 'Flexible / To be estimated',
     details: '',
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>('idle');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -23,28 +32,42 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === 'sending') return;
 
-    const subject = `Project Enquiry: ${formData.service} from ${formData.name}`;
-    const body = `Name: ${formData.name}
-Email: ${formData.email}
-Phone/WhatsApp: ${formData.phone || 'Not provided'}
-Service Needed: ${formData.service}
-Budget/Timeline: ${formData.budget}
+    setStatus('sending');
 
-Project Details:
-${formData.details}`;
+    // Keys here must match the {{variables}} in your EmailJS template
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      phone: formData.phone || 'Not provided',
+      service: formData.service,
+      message: formData.details,
+    };
 
-    const mailtoUrl = `mailto:hello@jexiratech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
 
-    // Try to trigger mailto
-    window.location.href = mailtoUrl;
-    setSubmitted(true);
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: initialService || 'Custom software',
+        details: '',
+      });
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setStatus('error');
+    }
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('hello@jexiratech.com');
+    navigator.clipboard.writeText(CONTACT_EMAIL);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
@@ -78,10 +101,10 @@ ${formData.details}`;
                 <b className="text-ink block text-sm">Direct Email</b>
                 <div className="flex items-center gap-2 mt-0.5">
                   <a
-                    href="mailto:hello@jexiratech.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="text-brand font-semibold hover:underline text-sm"
                   >
-                    jexiratech@gmail.com
+                    {CONTACT_EMAIL}
                   </a>
                   <button
                     type="button"
@@ -200,20 +223,6 @@ ${formData.details}`;
               </label>
             </div>
 
-            {/* <label>
-              Estimated Scope / Budget
-              <select
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-              >
-                <option value="Flexible / To be estimated">Flexible / Needs Estimation</option>
-                <option value="Under $3,000 / ₹2.5L">Starter Prototype / MVP (Under ₹2.5L / $3,000)</option>
-                <option value="$3,000 - $10,000 / ₹2.5L - ₹8L">Full Application (₹2.5L - ₹8L / $3k-$10k)</option>
-                <option value="$10,000+ / ₹8L+">Enterprise System (₹8L+ / $10k+)</option>
-              </select>
-            </label> */}
-
             <label>
               Project Details & Objectives *
               <textarea
@@ -228,19 +237,29 @@ ${formData.details}`;
 
             <button
               type="submit"
-              className="w-full py-3.5 px-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#124045] to-[#1a5860] hover:from-[#0d3135] hover:to-[#14474e] text-white font-bold text-sm sm:text-base shadow-[0_12px_28px_-6px_rgba(18,64,69,0.45)] hover:shadow-[0_16px_36px_-6px_rgba(18,64,69,0.55)] transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center justify-center gap-2.5 group"
+              disabled={status === 'sending'}
+              className="w-full py-3.5 px-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#124045] to-[#1a5860] hover:from-[#0d3135] hover:to-[#14474e] text-white font-bold text-sm sm:text-base shadow-[0_12px_28px_-6px_rgba(18,64,69,0.45)] hover:shadow-[0_16px_36px_-6px_rgba(18,64,69,0.55)] transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer flex items-center justify-center gap-2.5 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              <Send size={17} className="transition-transform group-hover:translate-x-1 text-[#2bb3be]" />
-              <span>Send Project Enquiry</span>
+              {status === 'sending' ? (
+                <>
+                  <Loader2 size={17} className="animate-spin text-[#2bb3be]" />
+                  <span>Sending...</span>
+                </>
+              ) : (
+                <>
+                  <Send size={17} className="transition-transform group-hover:translate-x-1 text-[#2bb3be]" />
+                  <span>Send Project Enquiry</span>
+                </>
+              )}
             </button>
 
-            {submitted && (
+            {status === 'success' && (
               <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm flex items-start gap-2.5 animate-fadeIn">
                 <Sparkles size={18} className="text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong>Enquiry launched!</strong>
+                  <strong>Enquiry sent!</strong>
                   <p className="mt-0.5 mb-0 text-emerald-700">
-                    Your default email client opened with the enquiry. You can also chat directly on{' '}
+                    Thanks for reaching out. We’ll reply within one business day. You can also chat directly on{' '}
                     <button
                       type="button"
                       onClick={handleWhatsApp}
@@ -248,7 +267,19 @@ ${formData.details}`;
                     >
                       WhatsApp
                     </button>{' '}
-                    or mail to <b>hello@jexiratech.com</b>.
+                    or mail us at <b>{CONTACT_EMAIL}</b>.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {status === 'error' && (
+              <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs sm:text-sm flex items-start gap-2.5 animate-fadeIn">
+                <AlertCircle size={18} className="text-red-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong>Something went wrong.</strong>
+                  <p className="mt-0.5 mb-0 text-red-700">
+                    Your enquiry could not be sent. Please try again, or email us directly at <b>{CONTACT_EMAIL}</b>.
                   </p>
                 </div>
               </div>
