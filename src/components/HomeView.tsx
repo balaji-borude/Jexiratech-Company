@@ -18,11 +18,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-brand mb-2 block">
-                Core Capabilities
+                Freelance Development Capabilities
               </span>
-              <h2>What we build for you</h2>
+              <h2>Web, Mobile &amp; Custom Software Engineering</h2>
               <p className="section-sub mb-0">
-                Three things we do best. Shaped to your specific industry and workflow.
+                Hire a dedicated freelance development team in India. We engineer scalable platforms shaped to your exact workflow.
               </p>
             </div>
             <div>
@@ -41,21 +41,21 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
             <div className="card g flex flex-col justify-between">
               <div>
                 <div className="card-icon">
-                  <img src="/icons/custom.png" alt="Custom Software" className="w-full h-full object-contain" />
+                  <img src="/icons/custom.png" alt="Custom CRM & ERP Software" className="w-full h-full object-contain" />
                 </div>
-                <h3>Custom Software</h3>
+                <h3>Custom CRM &amp; ERP Software</h3>
                 <p>
-                  Tools shaped to your exact workflow, from internal management portals to data-heavy customer platforms.
+                  Build a custom CRM or ERP platform tailored for your business. Replace fragile spreadsheets with automated inventory, billing, and workflows.
                 </p>
               </div>
               <ul className="mt-6 space-y-2 text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-brand shrink-0" />
-                  <span>Bespoke business workflows</span>
+                  <span>Bespoke CRM &amp; ERP architectures</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-brand shrink-0" />
-                  <span>Secure role-based databases</span>
+                  <span>Automated invoicing &amp; role security</span>
                 </li>
               </ul>
             </div>
@@ -63,21 +63,21 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
             <div className="card g flex flex-col justify-between">
               <div>
                 <div className="card-icon">
-                  <img src="/icons/app-development.png" alt="Web and Mobile Apps" className="w-full h-full object-contain" />
+                  <img src="/icons/app-development.png" alt="React Web Application Development" className="w-full h-full object-contain" />
                 </div>
-                <h3>Web and Mobile Apps</h3>
+                <h3>React &amp; Next.js Web Apps</h3>
                 <p>
-                  Fast, responsive, and secure digital apps engineered for web browsers, Android, and iOS.
+                  Fast, SEO-optimized, and secure digital apps engineered with React, Next.js, and TypeScript for high-traffic browser platforms and SaaS products.
                 </p>
               </div>
               <ul className="mt-6 space-y-2 text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-brand shrink-0" />
-                  <span>Fluid 60fps native feel</span>
+                  <span>Fluid, high-conversion UX</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-brand shrink-0" />
-                  <span>Cross-platform Flutter & React</span>
+                  <span>SaaS dashboards &amp; REST/GraphQL APIs</span>
                 </li>
               </ul>
             </div>
@@ -85,23 +85,82 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onContactClick, 
             <div className="card g flex flex-col justify-between">
               <div>
                 <div className="card-icon">
-                  <img src="/icons/automation.png" alt="Business Automation" className="w-full h-full object-contain" />
+                  <img src="/icons/automation.png" alt="Flutter & Mobile App Development" className="w-full h-full object-contain" />
                 </div>
-                <h3>Business Automation</h3>
+                <h3>Flutter Mobile App Development</h3>
                 <p>
-                  CRM, ERP, and API integrations that eliminate repetitive manual work, human errors, and data silos.
+                  High-performance iOS and Android mobile applications built with Flutter and React Native, complete with offline sync and store publishing.
                 </p>
               </div>
               <ul className="mt-6 space-y-2 text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-brand shrink-0" />
-                  <span>Automated alerts & invoicing</span>
+                  <span>Native 60fps performance</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-brand shrink-0" />
-                  <span>Third-party integrations</span>
+                  <span>Offline-first SQLite synchronization</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Hire Our Freelance Development Team vs Agency Section */}
+      <section className="py-12 bg-[#eaf3f4]/50 border-y border-slate-200/70">
+        <div className="wrap">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div className="max-w-2xl">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand mb-2 block">
+                Freelance Team Advantage
+              </span>
+              <h2>Why hire our freelance team vs a traditional agency?</h2>
+              <p className="section-sub mb-0">
+                Get senior engineering talent with direct communication, faster delivery, and no expensive agency overhead or account manager markups.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 self-start md:self-auto">
+              <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white text-[#124045] border border-[#2bb3be]/30 shadow-xs">
+                Hire React Developers India
+              </span>
+              <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white text-[#124045] border border-[#2bb3be]/30 shadow-xs">
+                Freelance Flutter Developers
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col">
+              <div className="text-2xl font-black text-brand mb-2">01</div>
+              <h3 className="text-base font-bold text-ink mb-2">Direct Engineer Access</h3>
+              <p className="text-xs text-slate-600 leading-relaxed m-0">
+                Talk directly to the architects and developers writing your code. Zero miscommunication, no middleman account managers, and instant technical feedback.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col">
+              <div className="text-2xl font-black text-brand mb-2">02</div>
+              <h3 className="text-base font-bold text-ink mb-2">Startup MVP Specialists</h3>
+              <p className="text-xs text-slate-600 leading-relaxed m-0">
+                Launch your web or mobile MVP in 4 to 8 weeks. We focus on core buyer journeys so you can test market demand and raise investor funding quickly.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col">
+              <div className="text-2xl font-black text-brand mb-2">03</div>
+              <h3 className="text-base font-bold text-ink mb-2">100% Code &amp; IP Ownership</h3>
+              <p className="text-xs text-slate-600 leading-relaxed m-0">
+                Full Git repository transfer upon milestone settlement. Complete copyright ownership, clean documentation, and zero recurring vendor lock-ins.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col">
+              <div className="text-2xl font-black text-brand mb-2">04</div>
+              <h3 className="text-base font-bold text-ink mb-2">Maharashtra &amp; Pan-India</h3>
+              <p className="text-xs text-slate-600 leading-relaxed m-0">
+                Based in Maharashtra, India. We offer flexible pricing, milestone settlements, and collaborative time zones for clients in India and worldwide.
+              </p>
             </div>
           </div>
         </div>

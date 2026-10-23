@@ -16,12 +16,12 @@ export const AboutView: React.FC<AboutViewProps> = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-brand mb-2 block">
               Our Story & Promise
             </span>
-            <h2>A dedicated engineering company with a simple promise</h2>
+            <h2>A dedicated freelance development team with a simple promise</h2>
             <p className="sub text-slate-700 leading-relaxed mb-6">
-              We started <strong>Jexiratech Solutions</strong> to give businesses software that is dependable, well explained, and fairly priced.
+              We started <strong>Jexiratech Solutions</strong> in Maharashtra, India to give founders, startups, and growing businesses direct access to senior freelance software developers without agency overhead.
             </p>
             <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
-              Too many software projects fail due to bloated agency overhead, broken promises, and complex technical jargon. Our team stays small, agile, and focused—meaning you collaborate directly with the engineers and architects building your product.
+              Too many software projects fail due to bloated agency billing, broken promises, and complex technical jargon. Our agile freelance team stays lean and focused—meaning you collaborate directly with the React, Flutter, and Full-Stack engineers building your web apps, mobile apps, startup MVPs, and custom CRM/ERP platforms.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
