@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                 </div>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Dedicated freelance development team in Maharashtra, India. We build custom web applications, mobile apps, startup MVPs, and custom CRM/ERP software. Code you own, fixed milestones that stay on track.
+                Jexiratech Solutions builds custom software, web, and mobile apps for ambitious and growing businesses. Code you own, plans that stay on track.
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                     }}
                     className="hover:text-[#124045] transition-colors cursor-pointer"
                   >
-                    Services &amp; Process
+                    Services & Process
                   </button>
                 </li>
                 <li>
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                     }}
                     className="hover:text-[#124045] transition-colors cursor-pointer"
                   >
-                    Products &amp; Case Studies
+                    Products & Case Studies
                   </button>
                 </li>
               </ul>
@@ -115,7 +115,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                     }}
                     className="hover:text-[#124045] transition-colors cursor-pointer"
                   >
-                    React &amp; Next.js Web Apps
+                    Custom Software Engineering
                   </button>
                 </li>
                 <li>
@@ -127,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                     }}
                     className="hover:text-[#124045] transition-colors cursor-pointer"
                   >
-                    Flutter &amp; Mobile App Development
+                    Web Applications (React/Next)
                   </button>
                 </li>
                 <li>
@@ -139,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                     }}
                     className="hover:text-[#124045] transition-colors cursor-pointer"
                   >
-                    Startup MVP Development Services
+                    Mobile Apps (iOS & Android)
                   </button>
                 </li>
                 <li>
@@ -151,19 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onContactClick }) =>
                     }}
                     className="hover:text-[#124045] transition-colors cursor-pointer"
                   >
-                    Custom CRM &amp; ERP Software
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      onNavigate('service');
-                      scrollToTop();
-                    }}
-                    className="hover:text-[#124045] transition-colors cursor-pointer"
-                  >
-                    Cloud DevOps &amp; Automation
+                    Business Automation & ERP
                   </button>
                 </li>
               </ul>

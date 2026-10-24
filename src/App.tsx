@@ -43,10 +43,10 @@ export const App: React.FC = () => {
   // Update document title dynamically
   useEffect(() => {
     const titleMap: Record<ViewType, string> = {
-      home: 'Hire Freelance Developers India | Web, App & Startup MVP Team',
-      about: 'About Our Freelance Engineering Team in Maharashtra',
-      service: 'Freelance Web, Mobile & MVP Development Services',
-      product: 'Live Client Systems & Startup MVP Case Studies',
+      home: 'Custom Software Development & Cloud Solutions',
+      about: 'About Our Team & Philosophy',
+      service: 'Custom Software, Web & Mobile Services',
+      product: 'Live Products & Architectural Demos',
     };
 
     document.title = `${titleMap[currentView] || 'Solutions'} | Jexiratech Solutions`;
